@@ -98,7 +98,7 @@ canvas.drawText(message: "saturday / august 224 1996", at: Point(x: 165, y: 570)
 canvas.drawText(message: "10 pm, all invited", at: Point(x: 165, y: 560), size: 8)
 canvas.drawText(message: "with old hearts club", at: Point(x: 300, y: 570), size: 8)
 canvas.drawText(message: "and melk", at: Point(x: 340, y: 560), size:8)
-canvas.drawText(message: "modest mouse", at: Point(x: 17, y: 410), size: 40)
+canvas.drawText(message: "modest mouse", at: Point(x: 17, y: 400), size: 40)
 
 
 // Draw A Grid
