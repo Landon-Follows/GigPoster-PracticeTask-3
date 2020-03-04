@@ -32,57 +32,84 @@ let black = Color(hue: 0, saturation: 100, brightness: 0, alpha: 100)
 
 // Begin your solution here...
 
-// Draw background
 
-canvas.fillColor = darkGrey
+// Create Background Color
 
-canvas.drawRectangle(at: Point(x: 0, y: 0), width: 400, height: 600)
+    canvas.fillColor = darkGrey
+    canvas.drawRectangle(at: Point(x: 0, y: 0), width: 400, height: 600)
 
 
-//Draw Lines at 19 loops
+// Create The Lines
+
+
+// Rotate Lines
+
+    canvas.rotate(by: -45)
+    canvas.defaultLineWidth = 20
+
+for LineX2 in stride(from: -360, through: 360, by: 40) {
     
-for y in stride (from: 0, through: 600, by: 50) {
-    
-    for x in stride (from: -130, through: 380, by: 160) {
+    if LineX2 < -79 {
         
+        canvas.lineColor = lightGrey
         
-        if x == -130 || x == 190 {
-            
-            canvas.lineColor = deepYellow
-            
-        }
+    } else if LineX2 > -80 && LineX2 < 41 {
         
-        if x == 30 || x == 320 {
-            
-            canvas.lineColor = lightGrey
-            
-        }
+        canvas.lineColor = deepYellow
         
-        if x == 30 || x == 250 {
-                   
-                   canvas.lineColor = black
-            
-        }
+    } else if LineX2 > 40 {
+        
+        canvas.lineColor = black
+        
     }
+    
+    print(LineX2)
+    
+    canvas.drawLine(from: Point(x: LineX2, y: 0), to: Point(x: LineX2, y: 800))
+    
 }
 
-// Create Rectangle Layer over the Lines
+canvas.rotate(by: 45)
 
+canvas.drawRectangle(at: Point(x: 0, y: 400), width: 400, height: 200)
 
+// Draw A Cluster
 
-// Create text
+canvas.defaultLineWidth = 2
+canvas.lineColor = black
 
-
-
-//draw grid
-
-canvas.drawShapesWithBorders = true
-canvas.drawShapesWithFill = false
-for y in stride (from: 0, through: 600, by: 50){
-for x in stride (from: 0, through: 400, by: 50){
-canvas.drawRectangle(at: Point(x: x, y: y), width: 50, height: 50)
-    }
+for LineY in stride(from: 0, through: 600, by: 50){
+    
+    canvas.drawLine(from: Point(x: 0, y: LineY), to: Point(x: 400, y: LineY))
+    
 }
+
+for LineX in stride(from: 0, through: 400, by: 50) {
+    
+    canvas.drawLine(from: Point(x: LineX, y: 0), to: Point(x: LineX, y: 600))
+    
+}
+
+// Insert Text
+
+canvas.drawText(message: "at the speak in tounges social hall", at: Point(x: 17, y: 570), size: 8)
+canvas.drawText(message: "4311 lorain ave. / cleveland, oh", at: Point(x: 17, y: 560), size: 8)
+canvas.drawText(message: "saturday / august 224 1996", at: Point(x: 165, y: 570), size: 8)
+canvas.drawText(message: "10 pm, all invited", at: Point(x: 165, y: 560), size: 8)
+canvas.drawText(message: "with old hearts club", at: Point(x: 300, y: 570), size: 8)
+canvas.drawText(message: "and melk", at: Point(x: 340, y: 560), size:8)
+canvas.drawText(message: "modest mouse", at: Point(x: 17, y: 410), size: 40)
+
+
+// Draw A Grid
+
+///canvas.drawShapesWithBorders = true
+///canvas.drawShapesWithFill = false
+///for y in stride (from: 0, through: 600, by: 50){
+///for x in stride (from: 0, through: 400, by: 50){
+///canvas.drawRectangle(at: Point(x: x, y: y), width: 50, height: 50)
+///    }
+///}
 /*:
  ## Use Source Control
  
