@@ -45,15 +45,15 @@ let black = Color(hue: 0, saturation: 100, brightness: 0, alpha: 100)
 // Rotate Lines
 
     canvas.rotate(by: -45)
-    canvas.defaultLineWidth = 20
+    canvas.defaultLineWidth = 16
 
-for LineX2 in stride(from: -360, through: 360, by: 40) {
+for LineX2 in stride(from: -260, through: 360, by: 32) {
     
     if LineX2 < -79 {
         
         canvas.lineColor = lightGrey
         
-    } else if LineX2 > -80 && LineX2 < 41 {
+    } else if LineX2 > -60 && LineX2 < 30 {
         
         canvas.lineColor = deepYellow
         
